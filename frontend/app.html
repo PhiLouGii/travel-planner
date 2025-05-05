@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Travel Itinerary Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Accessibility Controls -->
+    <nav class="accessibility-bar" aria-label="Accessibility controls">
+        <button id="themeToggle" class="accessibility-btn" aria-pressed="false">
+            🌓 Toggle Theme
+        </button>
+        <div class="font-controls">
+            <button id="fontIncrease" class="accessibility-btn" aria-label="Increase font size">A+</button>
+            <button id="fontDecrease" class="accessibility-btn" aria-label="Decrease font size">A-</button>
+        </div>
+    </nav>
+
+    <main class="container" role="main">
+        <header class="trip-header">
+            <h1 id="mainTitle" tabindex="0">My Travel Plan</h1>
+            <div class="date-info">
+                <p><time datetime="2024-02-03">Today's Date: February 3, 2024</time></p>
+                <p>Days Left: <span id="daysLeft">3</span></p>
+            </div>
+        </header>
+
+        <section class="trip-info-grid" role="region" aria-labelledby="tripDetailsHeading">
+            <h2 id="tripDetailsHeading" class="visually-hidden">Trip Details</h2>
+            
+            <div class="info-card" role="group" aria-labelledby="budgetHeading">
+                <h3 id="budgetHeading">Budget Overview</h3>
+                <p>Total Budget: <span data-currency="USD">345</span></p>
+                <p>Actual Spending: <span data-currency="USD">358.27</span></p>
+                <p>Difference: <span id="budgetDifference">-13.27</span></p>
+            </div>
+
+            <div class="info-card" role="group" aria-labelledby="travelersHeading">
+                <h3 id="travelersHeading">Travelers</h3>
+                <p>Adults: 10</p>
+                <p>Children: 1</p>
+                <p>Pets: 0</p>
+            </div>
+
+            <div class="info-card" role="group" aria-labelledby="datesHeading">
+                <h3 id="datesHeading">Dates</h3>
+                <p>Start: <time datetime="2024-02-06">Feb 6, 2024</time></p>
+                <p>Nights: 14</p>
+            </div>
+        </section>
+
+        <section class="expenses-section" role="region" aria-labelledby="expensesHeading">
+            <h2 id="expensesHeading" tabindex="0">Expenses Breakdown</h2>
+            <div class="table-container">
+                <table class="expenses-table" role="table" aria-describedby="expensesHeading">
+                    <thead role="rowgroup">
+                        <tr role="row">
+                            <th role="columnheader" scope="col">Category</th>
+                            <th role="columnheader" scope="col">Budgeted (USD)</th>
+                            <th role="columnheader" scope="col">Actual (USD)</th>
+                            <th role="columnheader" scope="col">Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody role="rowgroup">
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
