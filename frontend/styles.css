@@ -1,19 +1,52 @@
 :root {
-    --primary-color: #50452c;
-    --secondary-color: #ad7220;
-    --background-color: #ffffff;
-    --text-color: #333333;
-    --card-bg: #f8f9fa;
+    --primary-color: #ff6b35;
+    --secondary-color: #d45d29;
+    --accent-color: #4d3828;
+    --background-color: #fff7f0;
+    --text-color: #2d1a12;
+    --card-bg: #ffffff;
     --transition-time: 0.3s;
     --base-font-size: 16px;
 }
 
 [data-theme="dark"] {
-    --background-color: #1a1a1a;
-    --text-color: #f8f9fa;
-    --card-bg: #2c2c2c;
-    --primary-color: #3498db;
+    --background-color: #2d1a2d;
+    --text-color: #ffe4c4;
+    --card-bg: #3e2723;
+    --primary-color: #d45d29;
+    --secondary-color: #ff6b35;
 }
+
+/* Bootstrap overrides */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.navbar-dark {
+    background-color: var(--accent-color) !important;
+}
+
+/* Carousel customizations */
+.carousel-caption {
+    background: rgba(128, 71, 28, 0.8); /* Warm brown overlay */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.carousel-caption h2 {
+    color: #ffd8b1;
+}
+
 
 * {
     box-sizing: border-box;
@@ -166,4 +199,38 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
+}
+
+.logo {
+    width: 55px;
+    height: 60px;
+}
+
+/* Form elements */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 53, 0.25);
+}
+
+/* Link colors */
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.accessibility-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.expenses-table th {
+    background-color: var(--accent-color);
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(128, 71, 28, 0.1);
 }
